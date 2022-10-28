@@ -36,7 +36,9 @@ namespace DummyPipelineTestApp.Pages.Clients
             
             try
             {
-                String connectionString = "Data Source=USHYDAMPARIDA2\\MSSQLSERVER01;Initial Catalog=Dummy1;Integrated Security=True";
+                String connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
